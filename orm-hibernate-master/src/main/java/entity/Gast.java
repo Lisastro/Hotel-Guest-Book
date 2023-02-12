@@ -13,28 +13,46 @@ public class Gast {
     private String geslacht;
 
 
-
     @OneToOne(cascade = CascadeType.ALL)
     private GastDetail gastDetailId;
 
+    public Long getId() {
+        return id;
+    }
 
-    @Id
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    @Id
-    public String getVoornaam() { return voornaam; }
-    public void setVoornaam(String voornaam) { this.voornaam = voornaam; }
+    public String getVoornaam() {
+        return voornaam;
+    }
 
-    @Id
-    public String getAchternaam() { return achternaam; }
-    public void setAchternaam(String achternaam) { this.achternaam = achternaam; }
+    public void setVoornaam(String voornaam) {
+        this.voornaam = voornaam;
+    }
 
-    @Id
-    public String getGeslacht() { return geslacht; }
-    public void setGeslacht(String geslacht) { this.geslacht= geslacht; }
+    public String getAchternaam() {
+        return achternaam;
+    }
 
-    public GastDetail getGastetailId() { return gastDetailId; }
-    public void setGastDetailId(GastDetail gastDetailId) { this.gastDetailId = gastDetailId; }
+    public void setAchternaam(String achternaam) {
+        this.achternaam = achternaam;
+    }
 
+    public String getGeslacht() {
+        return geslacht;
+    }
+
+    public void setGeslacht(String geslacht) {
+        this.geslacht = geslacht;
+    }
+
+    public GastDetail getGastDetailId() {
+        return gastDetailId;
+    }
+
+    public void setGastDetailId(GastDetail gastDetailId) {
+        this.gastDetailId = gastDetailId;
+    }
 }

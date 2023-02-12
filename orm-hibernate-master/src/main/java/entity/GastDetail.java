@@ -14,27 +14,35 @@ public class GastDetail {
     private String adress;
     private String telefoonNummer;
 
-    @Id
     public Long getId() {
         return id;
     }
-    public void setId (Long id) { this.id = id; }
 
-    @Id
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getGeboorteDatum() {
         return geboorteDatum;
     }
-    public void setGeboorteDatum(String geboorteDatum) { this.geboorteDatum = geboorteDatum; }
 
-    @Id
+    public void setGeboorteDatum(String geboorteDatum) {
+        this.geboorteDatum = geboorteDatum;
+    }
+
     public String getAdress() {
         return adress;
     }
+
     public void setAdress(String adress) {
         this.adress = adress;
     }
 
-    @Id
-    public String getTelefoonNummer() { return telefoonNummer; }
-    public void setTelefoonNummer (String telefoonNummer) { this.telefoonNummer = telefoonNummer; }
+    public String getTelefoonNummer() {
+        return telefoonNummer;
+    }
+
+    public void setTelefoonNummer(String telefoonNummer) {
+        this.telefoonNummer = telefoonNummer;
+    }
 }
