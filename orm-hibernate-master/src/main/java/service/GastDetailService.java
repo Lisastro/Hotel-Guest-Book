@@ -8,11 +8,8 @@ public class GastDetailService {
 
     private GastDetailRepository gastDetailRepository;
 
-    public GastDetailService() {
-        this.gastDetailRepository = new GastDetailRepository(JPAConfiguration.getEntityManager());
-    }
+    public GastDetailService() { this.gastDetailRepository = new GastDetailRepository(JPAConfiguration.getEntityManager()); }
 
-    public GastDetail createGastDetail(GastDetail gastDetail){
-        return gastDetailRepository.createGastDetail(gastDetail);
-    }
+    public GastDetail createGastDetail(GastDetail gastDetail){ return gastDetailRepository.createGastDetail(gastDetail); }
+
 }

@@ -38,4 +38,37 @@ public class GastRepository {
         return gast;
     }
 
-}
+    public Gast updateGast(Gast gast) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.find(Gast.class, gast.getId());
+            entityManager.merge(gast);
+            entityManager.getTransaction().commit();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return gast;
+    }
+
+    public boolean deleteGast(long id) {
+            try {
+                entityManager.getTransaction().begin();
+                Gast g = entityManager.find(Gast.class, id);
+                entityManager.remove(g);
+                entityManager.getTransaction().commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+                entityManager.getTransaction().rollback();
+            }
+            return false;
+    }
+
+    public List<Gast> readGast() {
+            String query = "select g from Gast g";
+            TypedQuery<Gast> typedQuery = entityManager.createQuery(query, Gast.class);
+            List<Gast> g = typedQuery.getResultList();
+            return g;
+        }
+    }
+
